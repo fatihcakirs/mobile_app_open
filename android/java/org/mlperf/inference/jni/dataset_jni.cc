@@ -17,11 +17,11 @@ limitations under the License.
 #include <memory>
 #include <string>
 
-#include "android/cpp/backend.h"
-#include "android/cpp/datasets/ade20k.h"
-#include "android/cpp/datasets/coco.h"
-#include "android/cpp/datasets/imagenet.h"
-#include "android/cpp/datasets/squad.h"
+#include "common-native-cpp/backend.h"
+#include "common-native-cpp/datasets/ade20k.h"
+#include "common-native-cpp/datasets/coco.h"
+#include "common-native-cpp/datasets/imagenet.h"
+#include "common-native-cpp/datasets/squad.h"
 #include "tensorflow/lite/java/src/main/native/jni_utils.h"
 
 using mlperf::mobile::Backend;

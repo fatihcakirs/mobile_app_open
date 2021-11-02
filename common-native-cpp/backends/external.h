@@ -15,11 +15,11 @@ limitations under the License.
 #ifndef MLPERF_BACKENDS_EXTERNAL_H_
 #define MLPERF_BACKENDS_EXTERNAL_H_
 
-#include "android/cpp/backend.h"
-#include "android/cpp/c/type.h"
-#include "android/cpp/datasets/allocator.h"
-#include "android/cpp/proto/backend_setting.pb.h"
-#include "android/cpp/utils.h"
+#include "common-native-cpp/backend.h"
+#include "common-native-cpp/c/type.h"
+#include "common-native-cpp/datasets/allocator.h"
+#include "common-native-cpp/proto/backend_setting.pb.h"
+#include "common-native-cpp/utils.h"
 #include "tensorflow/lite/shared_library.h"
 
 namespace mlperf {

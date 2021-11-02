@@ -38,10 +38,10 @@ cc_library(
         "//conditions:default": [],
     }),
     deps = [
-        "//android/cpp:mlperf_driver",
-        "//android/cpp:utils",
-        "//android/cpp/datasets:allocator",
-        "//android/cpp/proto:mlperf_task_cc_proto",
+        "//common-native-cpp:mlperf_driver",
+        "//common-native-cpp:utils",
+        "//common-native-cpp/datasets:allocator",
+        "//common-native-cpp/proto:mlperf_task_cc_proto",
         "@org_tensorflow//tensorflow/lite:shared_library",
     ],
 )

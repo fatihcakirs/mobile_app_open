@@ -15,8 +15,8 @@ limitations under the License.
 #ifndef MLPERFHELPER_H
 #define MLPERFHELPER_H
 
-#include "android/cpp/c/backend_c.h"
-#include "android/cpp/c/type.h"
+#include "common-native-cpp/c/backend_c.h"
+#include "common-native-cpp/c/type.h"
 #include "qti_backend_helper.h"
 #include "tensorflow/core/platform/logging.h"
 

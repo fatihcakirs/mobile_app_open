@@ -15,7 +15,7 @@
 # limitations under the License.
 ##########################################################################
 
-CPP_DIRS=('android/cpp' 'mobile_back_qti' 'mobile_back_tflite')
+CPP_DIRS=('common-native-cpp' 'mobile_back_qti' 'mobile_back_tflite')
 
 for directory in "${CPP_DIRS[@]}"
 do

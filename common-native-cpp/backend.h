@@ -17,8 +17,8 @@ limitations under the License.
 
 #include <vector>
 
-#include "android/cpp/proto/backend_setting.pb.h"
-#include "android/cpp/utils.h"
+#include "common-native-cpp/proto/backend_setting.pb.h"
+#include "common-native-cpp/utils.h"
 #include "loadgen/system_under_test.h"
 
 namespace mlperf {

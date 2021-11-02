@@ -12,14 +12,14 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
-#include "android/cpp/backends/external.h"
+#include "common-native-cpp/backends/external.h"
 
 #include <memory>
 #include <string>
 #include <vector>
 
-#include "android/cpp/backend.h"
-#include "android/cpp/utils.h"
+#include "common-native-cpp/backend.h"
+#include "common-native-cpp/utils.h"
 #include "tensorflow/lite/shared_library.h"
 
 namespace mlperf {

@@ -17,8 +17,8 @@ limitations under the License.
 #include <memory>
 #include <string>
 
-#include "android/cpp/backends/external.h"
-#include "android/cpp/proto/backend_setting.pb.h"
+#include "common-native-cpp/backends/external.h"
+#include "common-native-cpp/proto/backend_setting.pb.h"
 #include "google/protobuf/text_format.h"
 
 #ifdef __cplusplus

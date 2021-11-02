@@ -21,14 +21,14 @@ limitations under the License.
 #include <vector>
 
 #include "absl/strings/match.h"
-#include "android/cpp/backends/external.h"
-#include "android/cpp/datasets/ade20k.h"
-#include "android/cpp/datasets/coco.h"
-#include "android/cpp/datasets/imagenet.h"
-#include "android/cpp/datasets/squad.h"
-#include "android/cpp/mlperf_driver.h"
-#include "android/cpp/proto/mlperf_task.pb.h"
-#include "android/cpp/utils.h"
+#include "common-native-cpp/backends/external.h"
+#include "common-native-cpp/datasets/ade20k.h"
+#include "common-native-cpp/datasets/coco.h"
+#include "common-native-cpp/datasets/imagenet.h"
+#include "common-native-cpp/datasets/squad.h"
+#include "common-native-cpp/mlperf_driver.h"
+#include "common-native-cpp/proto/mlperf_task.pb.h"
+#include "common-native-cpp/utils.h"
 #include "tensorflow/lite/tools/command_line_flags.h"
 
 namespace mlperf {

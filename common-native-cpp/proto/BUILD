@@ -19,44 +19,45 @@ package(
     licenses = ["notice"],  # Apache 2.0
 )
 
+proto_library(
+    name = "mlperf_task_proto",
+    srcs = [
+        "backend_setting.proto",
+        "mlperf_task.proto",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+cc_proto_library(
+    name = "mlperf_task_cc_proto",
+    deps = [":mlperf_task_proto"],
+)
+
+java_proto_library(
+    name = "mlperf_task_java_proto",
+    deps = [":mlperf_task_proto"],
+)
+
 common_linkopts = tflite_linkopts() + select({
     "//conditions:default": [],
     "@org_tensorflow//tensorflow:android": [
+        "-llog",
+        "-static-libgcc",
         "-pie",
     ],
-}) + select({
-    "//android/commonlibs:use_asan": [
-        "-fsanitize=address",
-        "-g",
-        "-O1",
-        "-fno-omit-frame-pointer",
-    ],
-    "//conditions:default": [],
 })
 
 cc_binary(
-    name = "main",
-    srcs = ["main.cc"],
-    copts = tflite_copts() + select({
-        "//android/commonlibs:use_asan": [
-            "-fsanitize=address",
-            "-g",
-            "-O1",
-            "-fno-omit-frame-pointer",
-        ],
-        "//conditions:default": [],
-    }),
+    name = "proto_test",
+    srcs = [
+        "test.cc",
+    ],
     linkopts = common_linkopts,
     deps = [
-        "//android/cpp:mlperf_driver",
-        "//android/cpp:utils",
-        "//android/cpp/backends:external",
-        "//android/cpp/datasets:ade20k",
-        "//android/cpp/datasets:coco",
-        "//android/cpp/datasets:imagenet",
-        "//android/cpp/datasets:squad",
-        "//android/cpp/proto:mlperf_task_cc_proto",
-        "@com_google_absl//absl/strings",
+        "//common-native-cpp:mlperf_driver",
+        "//common-native-cpp:utils",
+        "//common-native-cpp/proto:mlperf_task_cc_proto",
+        "@com_google_protobuf//:protobuf",
         "@org_tensorflow//tensorflow/lite/tools:command_line_flags",
     ],
 )

@@ -14,7 +14,7 @@
 # ==============================================================================
 load("@build_bazel_rules_android//android:rules.bzl", "android_binary", "android_library")
 load("@org_tensorflow//tensorflow/lite:build_def.bzl", "tflite_jni_binary")
-load("//android/cpp/proto:gen_binary_proto.bzl", "basename", "text_to_bin")
+load("//common-native-cpp/proto:gen_binary_proto.bzl", "basename", "text_to_bin")
 load("@bazel_skylib//rules:common_settings.bzl", "string_flag")
 
 package(
@@ -72,7 +72,7 @@ config_setting(
 
 java_lite_proto_library(
     name = "mlperf_task_java_proto_lite",
-    deps = ["//android/cpp/proto:mlperf_task_proto"],
+    deps = ["//common-native-cpp/proto:mlperf_task_proto"],
 )
 
 genrule(

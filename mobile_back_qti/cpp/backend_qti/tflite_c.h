@@ -14,8 +14,8 @@ limitations under the License.
 ==============================================================================*/
 #pragma once
 
-#include "android/cpp/c/backend_c.h"
-#include "android/cpp/c/type.h"
+#include "common-native-cpp/c/backend_c.h"
+#include "common-native-cpp/c/type.h"
 
 // Create a new backend and return the pointer to it.
 mlperf_backend_ptr_t tflite_backend_create(

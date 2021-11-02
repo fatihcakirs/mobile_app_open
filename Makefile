@@ -64,8 +64,8 @@ proto_test: output/mlperf_mobile_docker_1_0.stamp
 	@mkdir -p output/home/mlperf/cache && chmod 777 output/home/mlperf/cache
 	@docker run \
 		${NATIVE_DOCKER_FLAGS} --experimental_repo_remote_exec \
-		//android/cpp/proto:proto_test
-	@cp output/`readlink bazel-bin`/android/cpp/proto/proto_test output/proto_test
+		//common-native-cpp/proto:proto_test
+	@cp output/`readlink bazel-bin`/common-native-cpp/proto/proto_test output/proto_test
 	@chmod 777 output/proto_test
 
 main: output/mlperf_mobile_docker_1_0.stamp ${QTI_DEPS}
@@ -73,9 +73,9 @@ main: output/mlperf_mobile_docker_1_0.stamp ${QTI_DEPS}
 	@mkdir -p output/home/mlperf/cache && chmod 777 output/home/mlperf/cache
 	@docker run \
 		${COMMON_DOCKER_FLAGS} \
-		--config android_arm64 //mobile_back_tflite:tflitebackend ${QTI_TARGET} //android/cpp/binary:main
+		--config android_arm64 //mobile_back_tflite:tflitebackend ${QTI_TARGET} //common-native-cpp/binary:main
 	@rm -rf output/binary && mkdir -p output/binary
-	@cp output/`readlink bazel-bin`/android/cpp/binary/main output/binary/main
+	@cp output/`readlink bazel-bin`/common-native-cpp/binary/main output/binary/main
 	@cp output/`readlink bazel-bin`/mobile_back_tflite/cpp/backend_tflite/libtflitebackend.so output/binary/libtflitebackend.so
 	@${QTI_LIB_COPY}
 	@chmod 777 output/binary/main output/binary/libtflitebackend.so

@@ -16,7 +16,7 @@ Note that the full datasets can be extremely large; a subset of the full dataset
 prepared to give a useful proxy for task-specific accuracy. When prepared, each task
 directory should be pushed to `/sdcard/mlperf_datasets/...`.
 
-You can follow [this guide](https://github.com/mlcommons/mobile_app_open/blob/master/android/cpp/datasets/README.md) 
+You can follow [this guide](https://github.com/mlcommons/mobile_app_open/blob/master/common-native-cpp/datasets/README.md) 
 to download the datasets.
 
 ## <a name="app-execution"></a> App Execution

@@ -14,8 +14,8 @@ limitations under the License.
 ==============================================================================*/
 #include <string>
 
-#include "android/cpp/c/backend_c.h"
-#include "android/cpp/c/type.h"
+#include "common-native-cpp/c/backend_c.h"
+#include "common-native-cpp/c/type.h"
 
 #ifdef __cplusplus
 extern "C" {
