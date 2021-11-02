@@ -26,7 +26,7 @@ cc_library(
         "types.h",
     ],
     copts = select({
-        "//flutter/commonlibs:use_asan": [
+        "//commonlibs:use_asan": [
             "-fsanitize=address",
             "-g",
             "-O1",

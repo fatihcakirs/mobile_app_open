@@ -28,7 +28,7 @@ cc_library(
         "mlperf_driver_jni.cc",
     ],
     copts = tflite_copts() + select({
-        "//android/commonlibs:use_asan": [
+        "//commonlibs:use_asan": [
             "-fsanitize=address",
             "-g",
             "-O1",
@@ -40,7 +40,7 @@ cc_library(
         "-lm",
         "-ldl",
     ] + select({
-        "//android/commonlibs:use_asan": [
+        "//commonlibs:use_asan": [
             "-fsanitize=address",
         ],
         "//conditions:default": [],

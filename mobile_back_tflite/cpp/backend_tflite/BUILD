@@ -33,7 +33,7 @@ cc_library(
         "utils.h",
     ],
     copts = tflite_copts() + select({
-        "//android/commonlibs:use_asan": [
+        "//commonlibs:use_asan": [
             "-fsanitize=address",
             "-g",
             "-O1",
@@ -81,7 +81,7 @@ cc_library(
     copts = tflite_copts() + [
         "-Iexternal/neuron_delegate",
     ] + select({
-        "//android/commonlibs:use_asan": [
+        "//commonlibs:use_asan": [
             "-fsanitize=address",
             "-g",
             "-O1",

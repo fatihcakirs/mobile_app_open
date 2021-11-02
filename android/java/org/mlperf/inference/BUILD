@@ -166,7 +166,7 @@ android_binary(
     ],
     deps = [
         ":evaluation_app_lib",
-        "//android/commonlibs:commonlibs",
+        "//commonlibs:commonlibs",
     ] + select({
         ":use_qti": ["//mobile_back_qti:qtibackend"],
         "//conditions:default": [],

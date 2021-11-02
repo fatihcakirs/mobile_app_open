@@ -34,7 +34,7 @@ cc_library(
         "type.h",
     ],
     copts = select({
-        "//android/commonlibs:use_asan": [
+        "//commonlibs:use_asan": [
             "-fsanitize=address",
             "-g",
             "-O1",

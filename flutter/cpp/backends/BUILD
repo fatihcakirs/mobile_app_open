@@ -30,7 +30,7 @@ cc_library(
         "external.h",
     ],
     copts = tflite_copts() + select({
-        "//flutter/commonlibs:use_asan": [
+        "//commonlibs:use_asan": [
             "-fsanitize=address",
             "-g",
             "-O1",
