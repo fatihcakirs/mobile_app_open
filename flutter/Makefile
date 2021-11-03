@@ -5,6 +5,13 @@ else
 all: ios
 endif
 
+include ../mobile_back_qti/make/qti_backend.mk
+ifeq (${USE_PROXY_WORKAROUND},1)
+  export PROXY_WORKAROUND=--host_jvm_args -Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts
+else
+  export PROXY_WORKAROUND=
+endif
+
 .PHONY: ios
 ios: cpp-ios prepare-flutter update-splash-screen
 
@@ -127,7 +134,7 @@ backend-bridge-windows:
 
 .PHONY: backend-bridge-android
 backend-bridge-android:
-	bazel build --config=android_arm64 -c opt //flutter/cpp/flutter:libbackendbridge.so
+	bazel ${PROXY_WORKAROUND} build --config=android_arm64 -c opt //flutter/cpp/flutter:libbackendbridge.so
 	chmod +w bazel-bin/cpp/flutter/libbackendbridge.so
 	mkdir -p android/app/src/main/jniLibs/arm64-v8a
 	rm -f android/app/src/main/jniLibs/arm64-v8a/libbackendbridge.so
@@ -143,7 +150,7 @@ backends/tflite-windows:
 
 .PHONY: backends/tflite-android
 backends/tflite-android:
-	bazel build --config=android_arm64 -c opt //flutter/cpp/backend_tflite:libtflitebackend.so
+	bazel ${PROXY_WORKAROUND} --config=android_arm64 -c opt //flutter/cpp/backend_tflite:libtflitebackend.so
 	chmod +w bazel-bin/cpp/backend_tflite/libtflitebackend.so
 	mkdir -p android/app/src/main/jniLibs/arm64-v8a
 	rm -f android/app/src/main/jniLibs/arm64-v8a/libtflitebackend.so
